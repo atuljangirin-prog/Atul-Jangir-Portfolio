@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Atul Jangir – Web Developer, Graphic Designer, Video Editor, AI Enthusiast & Creative Technologist." />
+  <meta name="keywords" content="Atul Jangir, Web Developer, Portfolio, Graphic Designer, AI, Linux" />
+  <meta name="author" content="Atul Jangir" />
+  <meta name="theme-color" content="#050816" />
+  <title>Atul Jangir | Creative Technologist</title>
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="assets/logo.png" as="image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Mono:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress" role="progressbar" aria-hidden="true"></div>
+
+<!-- Background -->
+<div class="bg-blob blob1" aria-hidden="true"></div>
+<div class="bg-blob blob2" aria-hidden="true"></div>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<div id="mouse-glow"   aria-hidden="true"></div>
+
+<!-- ══════════════════════════════════
+     NAVBAR
+══════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Atul Jangir – Home">
+      <img src="assets/logo.png" alt="Atul Jangir Logo" class="nav-logo-img" width="140" height="40" />
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#terminal">Terminal</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow" data-aos="fade-down" data-aos-delay="80">Welcome to my universe</p>
+    <h1 class="hero-name" data-aos="fade-up" data-aos-delay="180">Atul Jangir</h1>
+    <div class="hero-typed-wrap" data-aos="fade-up" data-aos-delay="300">
+      <span>I'm a </span><span id="typed-text"></span><span class="typed-cursor" aria-hidden="true">|</span>
+    </div>
+    <p class="hero-sub" data-aos="fade-up" data-aos-delay="400">Crafting digital experiences at the intersection of design, code &amp; creativity.</p>
+    <div class="hero-ctas" data-aos="fade-up" data-aos-delay="500">
+      <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
+      <a href="#contact"  class="btn btn-outline"><i class="fas fa-paper-plane"></i> Contact Me</a>
+    </div>
+    <div class="hero-socials" data-aos="fade-up" data-aos-delay="600">
+      <a href="https://www.instagram.com/a.t.u.l_j.a.n.g.i.r/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/atuljangir_" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://bsky.app/profile/atuljangir.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky" class="bsky-link">
+        <svg class="bsky-icon" viewBox="0 0 360 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M180 142c-16-94-92-128-129-128C23 14 0 39 0 67c0 32 20 55 51 60-35 6-51 27-51 54 0 33 26 56 60 56 47 0 96-32 120-95 24 63 73 95 120 95 34 0 60-23 60-56 0-27-16-48-51-54 31-5 51-28 51-60 0-28-23-53-51-53-37 0-113 34-129 128z"/></svg>
+      </a>
+      <a href="https://mastodon.social/@atuljangir" target="_blank" rel="noopener" aria-label="Mastodon"><i class="fab fa-mastodon"></i></a>
+      <a href="https://www.threads.com/@a.t.u.l_j.a.n.g.i.r" target="_blank" rel="noopener" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
+      <a href="#" onclick="copyDiscord(event)" aria-label="Copy Discord username"><i class="fab fa-discord"></i></a>
+    </div>
+  </div>
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     ABOUT
+══════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Who I am</span>
+      <h2 class="section-title">About <span class="accent">Me</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-image-wrap" data-aos="fade-right" data-aos-delay="100">
+        <div class="about-img-frame">
+          <div class="about-img-placeholder"><span>AJ</span></div>
+          <div class="about-img-ring ring1" aria-hidden="true"></div>
+          <div class="about-img-ring ring2" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="about-text" data-aos="fade-left" data-aos-delay="150">
+        <p class="about-description">Passionate creator and technology enthusiast focused on building visually stunning digital experiences. Skilled in web development, graphic designing, video editing, AI tools, Linux systems, and creative content production.</p>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div><span class="stat-num" data-target="8">0</span><span class="stat-plus">+</span></div>
+            <p>Projects Built</p>
+          </div>
+          <div class="stat-card">
+            <div><span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span></div>
+            <p>Skills Mastered</p>
+          </div>
+          <div class="stat-card">
+            <div><span class="stat-num" data-target="99">0</span><span class="stat-plus">%</span></div>
+            <p>Passion Level</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SKILLS
+══════════════════════════════════ -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Capabilities</span>
+      <h2 class="section-title">My <span class="accent">Skills</span></h2>
+    </div>
+    <div class="skills-grid"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     TERMINAL
+══════════════════════════════════ -->
+<section id="terminal">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Developer Mode</span>
+      <h2 class="section-title">The <span class="accent">Terminal</span></h2>
+    </div>
+    <div class="terminal-wrap" data-aos="fade-up" data-aos-delay="100">
+      <div class="terminal-bar" aria-hidden="true">
+        <span class="t-dot t-red"></span>
+        <span class="t-dot t-yellow"></span>
+        <span class="t-dot t-green"></span>
+        <span class="t-title">atul@portfolio ~ %</span>
+      </div>
+      <div class="terminal-body" id="terminal-body" role="log" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     PROJECTS
+══════════════════════════════════ -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Portfolio</span>
+      <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+    </div>
+    <div class="projects-grid" id="projects-grid"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SERVICES
+══════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">What I offer</span>
+      <h2 class="section-title">My <span class="accent">Services</span></h2>
+    </div>
+    <div class="services-grid" id="services-grid"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CONTACT
+══════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Get in touch</span>
+      <h2 class="section-title">Contact <span class="accent">Me</span></h2>
+    </div>
+    <div class="contact-wrap" data-aos="fade-up" data-aos-delay="80">
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="cf-name" name="name" placeholder="Your Name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email <span class="req">*</span></label>
+            <input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-mobile">Mobile <span class="optional">(Optional)</span></label>
+          <input type="tel" id="cf-mobile" name="mobile" placeholder="+91 XXXXX XXXXX" autocomplete="tel" />
+        </div>
+        <div class="form-group">
+          <label for="cf-message">Message <span class="req">*</span></label>
+          <textarea id="cf-message" name="message" rows="5" placeholder="Tell me about your project…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn" id="submit-btn">
+          <span id="btn-text">Send Message</span>
+          <i class="fas fa-paper-plane" id="btn-icon"></i>
+          <i class="fas fa-spinner fa-spin" id="btn-loader" style="display:none" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer id="footer">
+  <div class="footer-inner">
+    <a href="#hero" class="footer-logo-wrap" aria-label="Back to top">
+      <img src="assets/logo.png" alt="Atul Jangir" class="footer-logo-img" width="120" height="35" loading="lazy" />
+    </a>
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/a.t.u.l_j.a.n.g.i.r/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/atuljangir_" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://bsky.app/profile/atuljangir.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky" class="bsky-link">
+        <svg class="bsky-icon" viewBox="0 0 360 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M180 142c-16-94-92-128-129-128C23 14 0 39 0 67c0 32 20 55 51 60-35 6-51 27-51 54 0 33 26 56 60 56 47 0 96-32 120-95 24 63 73 95 120 95 34 0 60-23 60-56 0-27-16-48-51-54 31-5 51-28 51-60 0-28-23-53-51-53-37 0-113 34-129 128z"/></svg>
+      </a>
+      <a href="https://mastodon.social/@atuljangir" target="_blank" rel="noopener" aria-label="Mastodon"><i class="fab fa-mastodon"></i></a>
+      <a href="https://www.threads.com/@a.t.u.l_j.a.n.g.i.r" target="_blank" rel="noopener" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
+    </div>
+    <p class="footer-copy">Designed &amp; Developed by <span class="accent">Atul Jangir</span> &copy; 2026</p>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════
+     AI ASSISTANT
+══════════════════════════════════ -->
+<div id="ai-widget" role="complementary" aria-label="AI Assistant">
+  <button id="ai-toggle" aria-label="Open AI Assistant" aria-expanded="false">
+    <span class="ai-orb-ring" aria-hidden="true"></span>
+    <i class="fas fa-robot" aria-hidden="true"></i>
+  </button>
+  <div id="ai-panel" class="ai-panel" aria-hidden="true" role="dialog" aria-label="Atul's AI Assistant">
+    <div class="ai-header">
+      <div class="ai-avatar" aria-hidden="true"><i class="fas fa-robot"></i></div>
+      <div>
+        <p class="ai-name">Atul's Assistant</p>
+        <span class="ai-status"><span class="ai-dot" aria-hidden="true"></span> Online</span>
+      </div>
+      <button id="ai-close" aria-label="Close assistant"><i class="fas fa-times" aria-hidden="true"></i></button>
+    </div>
+    <div class="ai-messages" id="ai-messages" aria-live="polite"></div>
+    <div class="ai-suggestions" id="ai-suggestions"></div>
+    <div class="ai-input-row">
+      <input type="text" id="ai-input" placeholder="Ask me anything…" aria-label="Message the assistant" autocomplete="off" />
+      <button id="ai-send" aria-label="Send"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast & Modal -->
+<div id="toast" class="toast" role="status" aria-live="polite">Discord username copied: atuljangir_</div>
+<div id="form-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-card">
+    <i id="modal-icon" class="fas fa-check-circle" aria-hidden="true"></i>
+    <h3 id="modal-title">Message Sent!</h3>
+    <p id="modal-msg">Thanks for reaching out. I'll get back to you soon.</p>
+    <button onclick="closeModal()" class="btn btn-primary">Close</button>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
